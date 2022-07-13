@@ -1,0 +1,32 @@
+link of the problem : https://leetcode.com/problems/is-subsequence/
+same problem can be found on GFG. Problem tag - Check for subsequence (https://practice.geeksforgeeks.org/problems/check-for-subsequence4930/1#)
+
+#1st approach (using While loop)
+Space - O(1)
+Time - O(N)
+
+class Solution(object):
+    def isSubsequence(self, s, t):
+        sindex=0
+        tindex=0
+        while sindex<len(s) and tindex<len(t):
+            if s[sindex]==t[tindex]:
+                sindex+=1
+            tindex+=1
+        return sindex==len(s)
+        
+        
+#2nd approach (using for loop)
+Space - O(1)
+Time - O(N)
+ 
+ class Solution(object):
+    def isSubsequence(self, s, t):
+        sindex=0
+        for i in t:
+            if sindex==len(s):
+                break
+            if s[sindex]==i:
+                sindex+=1
+        return sindex==len(s)
+ 
